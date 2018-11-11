@@ -1,6 +1,6 @@
 module ApplicationHelper
     def page_title
-        title = "ゼロ城試遊会データ小屋"
+        title = "定期更新ゲーム過去結果データ小屋"
         title = @page_title + " | " + title if @page_title
         title
     end
@@ -31,8 +31,8 @@ module ApplicationHelper
     def character_link(e_no)
         if e_no <= 0 then return end
 
-        file_name = sprintf("%04d",e_no)
-        link_to " 結果", "http://blacktea.sakura.ne.jp/teaconvini/c"+file_name+".html", :target => "_blank"
+        file_name = sprintf("%d",e_no)
+        link_to " 最終結果", "https://xxx.xxx/"+file_name+".html", :target => "_blank"
     end
     
     def character_old_link(last_result_no, e_no, result_no, generate_no)
@@ -41,30 +41,8 @@ module ApplicationHelper
 
         result_no_text = sprintf("%03d", result_no)
         generate_text  = generate_no > 0 ? "_" + sprintf("%d", generate_no) : ""
-        file_name = sprintf("%04d", e_no)
-        link_to " 過去結果", "http://mistofwar.kitunebi.com/M_o_W_5/"+result_no_text+generate_text+"/RESULT/c"+file_name+".html", :target => "_blank"
-    end
-    
-    def act_link(last_result_no, result_no, generate_no, block_no, act, e_no)
-        if e_no <= 0 then return end
-        if result_no != last_result_no then return end
-
-        file_name = sprintf("%d", block_no - 1)
-        act_no = (act == 1) ? "" : sprintf("%d", act - 1)
-        id = "act" + act_no + "-eno" + sprintf("%d", e_no)
-        link_to " 戦闘機動", "http://blacktea.sakura.ne.jp/teaconvini/RESULT/battle"+file_name+".html#"+id, :target => "_blank"
-    end
-    
-    def act_old_link(last_result_no, result_no, generate_no, block_no, act, e_no)
-        if e_no <= 0 then return end
-        if result_no == last_result_no then return end
-
-        result_no_text = sprintf("%03d", result_no)
-        generate_text  = generate_no > 0 ? "_" + sprintf("%d", generate_no) : ""
-        file_name = sprintf("%d", block_no - 1)
-        act_no = (act == 1) ? "" : sprintf("%d", act - 1)
-        id = "act" + act_no + "-eno" + sprintf("%d", e_no)
-        link_to " 過去結果", "http://mistofwar.kitunebi.com/M_o_W_5/"+result_no_text+generate_text+"/RESULT/battle"+file_name+".html#"+id, :target => "_blank"
+        file_name = sprintf("%d", e_no)
+        link_to " 結果", "https://xxx.xxx/"+result_no_text+generate_text+"/"+file_name+".html", :target => "_blank"
     end
 
     def search_submit_button()
@@ -117,19 +95,4 @@ module ApplicationHelper
         assembly_text.chop()
     end
 
-    def elemental_border(name)
-        if !name then 
-            return
-        end
-
-        border_style = ""
-        if name.name == "物理" then border_style = "0.2rem #ccc solid"
-        elsif name.name == "霊障" then border_style = "0.2rem #c4c solid"
-        elsif name.name == "粒子" then border_style = "0.2rem #4cc solid"
-        elsif name.name == "火炎" then border_style = "0.2rem #c44 solid"
-        elsif name.name == "電子" then border_style = "0.2rem #ee8 solid"
-        end
-
-        "border-left: " + border_style;
-    end
 end
