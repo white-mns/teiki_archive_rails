@@ -94,6 +94,10 @@ body { padding-top: 5rem; }
     padding: .8rem 1rem;
 }
 
+.page-item {
+    white-space: nowrap
+}
+
 .page-item.disabled {
     cursor: not-allowed;
 }
@@ -220,6 +224,10 @@ input + label:hover {
 }
 
 @media screen and (max-width:767px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
     table.search_toggle {
         border-collapse: collapse;
         td, th {
@@ -228,5 +236,13 @@ input + label:hover {
     }
     td.indent {
         padding: 0rem;
+    }
+
+    .pagination {
+        display: inline;
+    }
+
+    .pagination li {
+        display: inline-block;
     }
 }
