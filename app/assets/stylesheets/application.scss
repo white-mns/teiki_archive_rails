@@ -121,6 +121,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.card.desc .card-header {
+    margin-left: 1px;
+}
+
 .formText {
     border-left: 0.2em solid #48f !important;
 }
@@ -213,4 +217,16 @@ input + label:hover {
 
 input + label:hover {
     background: linear-gradient(transparent 70%, #2A9FD6 0%);
+}
+
+@media screen and (max-width:767px) {
+    table.search_toggle {
+        border-collapse: collapse;
+        td, th {
+            display: block;
+        }
+    }
+    td.indent {
+        padding: 0rem;
+    }
 }
