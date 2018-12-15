@@ -35,9 +35,9 @@ module ApplicationHelper
         link_to " 最終結果", "https://xxx.xxx/"+file_name+".html", :target => "_blank"
     end
     
-    def character_old_link(last_result_no, e_no, result_no, generate_no)
+    def character_old_link(latest_result_no, e_no, result_no, generate_no)
         if e_no <= 0 then return end
-        if result_no == last_result_no then return end
+        if result_no == latest_result_no then return end
 
         result_no_text = sprintf("%03d", result_no)
         generate_text  = generate_no > 0 ? "_" + sprintf("%d", generate_no) : ""
