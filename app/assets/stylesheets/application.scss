@@ -113,6 +113,10 @@ label {
     font-weight: bold;
 }
 
+::placeholder {
+    color: #ccc;
+}
+
 .card.top {
     border-color: #aaa;
     border-style: solid;
