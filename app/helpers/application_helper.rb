@@ -116,7 +116,7 @@ module ApplicationHelper
 
                 # 改行指定
                 if hash[:br] then
-                    haml_tag :br do end
+                    haml_tag :br
                 end
             end
         end
