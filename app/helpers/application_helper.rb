@@ -81,8 +81,8 @@ module ApplicationHelper
         end
     end
 
-    def td_form(f, form_params, placeholders, class_name: nil, colspan: nil, label: nil, params_name: nil, placeholder: nil, checkboxes: nil, left_class_name: nil)
-        haml_tag :td, class: left_class_name do
+    def td_form(f, form_params, placeholders, class_name: nil, colspan: nil, label: nil, params_name: nil, placeholder: nil, checkboxes: nil, label_td_class_name: nil)
+        haml_tag :td, class: label_td_class_name do
             if label then
                 haml_concat f.label params_name.to_sym, label
             end
