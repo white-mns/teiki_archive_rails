@@ -8,8 +8,8 @@
     = csrf_meta_tags
     = csp_meta_tag
 
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload"
+    = javascript_include_tag "application", "data-turbolinks-track": "reload"
     = javascript_include_tag "https://www.gstatic.com/charts/loader.js"
 
   %body
@@ -45,4 +45,4 @@
           = link_to "プライバシーポリシー", top_page_privacy_path
           %br
           ソースコード [#{link_to "解析部分", "https://github.com/white-mns/teiki_archive_parse"}] [#{link_to "表示部分", "https://github.com/white-mns/teiki_archive_rails"}]
-      = render 'layouts/analytics'
+      = render "layouts/analytics"
