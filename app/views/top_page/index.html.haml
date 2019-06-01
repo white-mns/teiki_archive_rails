@@ -4,8 +4,7 @@
   %a{:href => "https://archives.teiki.org/", :target => "_blank"} 定期更新ゲーム名
   を解析して得られる情報を扱っています。
 %br
-%p 
-  #{top_result_no(nil,nil)}更新結果まで反映済です。
+%p= top_text(@latest_result, @latest_generate, @uploaded_result)
 
 .card.top
   .card-body
