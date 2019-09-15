@@ -27,8 +27,8 @@ class ApplicationRecord < ActiveRecord::Base
 
   # 人数グラフの表示(値=固有名詞IDのとき、固有名詞をラベルとして表示)
   scope :to_sum_graph_proper_id, -> (column) {
-      pgws_name = Hash[*ProperName.pluck(:proper_id, :name).flatten]
-      pluck(column).inject(Hash.new(0)){|hash, a| hash[pgws_name[a]] += 1 ; hash}.sort_by{ |k, v| v}
+      proper_name = Hash[*ProperName.pluck(:proper_id, :name).flatten]
+      pluck(column).inject(Hash.new(0)){|hash, a| hash[proper_name[a]] += 1 ; hash}.sort_by{ |k, v| v}
   }
 
   # ヒストグラムの表示
